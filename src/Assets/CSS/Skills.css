@@ -126,3 +126,18 @@
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
     width: 60%;
 }
+
+
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    section {
+      padding: 10rem 4% 2rem;
+    }
+  }

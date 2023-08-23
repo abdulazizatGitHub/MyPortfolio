@@ -102,3 +102,17 @@
 .contact form .btn-box.btns .btn{
     cursor: pointer;
 }
+
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    section {
+      padding: 10rem 4% 2rem;
+    }
+  }

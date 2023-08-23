@@ -44,6 +44,7 @@ section{
 
 .home-content{
     max-width: 60rem;
+    z-index: 99;
 }
 .home-content h1{
     font-size: 5.6rem;
@@ -184,3 +185,27 @@ section{
     background: var(--bg-color);
     opacity: .8;
 }
+
+
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    section {
+      padding: 10rem 4% 2rem;
+    }
+  
+    .home {
+      padding: 0 4%;
+    }
+    .home-imghover {
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+  }
