@@ -18,9 +18,9 @@ function Home() {
                 </div>
 
                 <div className='home-sci'>
-                    <a href=''><FaFacebookF /></a>
-                    <a href=''><FaTwitter /></a>
-                    <a href=''><BsInstagram /></a>
+                    <a className='a' href=''><FaFacebookF /></a>
+                    <a className='a' href=''><FaTwitter /></a>
+                    <a className='a' href=''><BsInstagram /></a>
                 </div>
 
             </div>

@@ -97,7 +97,7 @@ body{
         width: 100%;
         z-index: 1;
         padding: 1rem 4%;
-        background: var(--main-color);
+        background: var(--second-bg-color);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         transition: .25s ease;
         transition-delay: .25s;
@@ -138,5 +138,11 @@ body{
     .navbar.active .a {
         transform: translateX(0);
         transition-delay: .25s;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
     }
 }

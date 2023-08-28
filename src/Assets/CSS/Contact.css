@@ -116,3 +116,15 @@
       padding: 10rem 4% 2rem;
     }
   }
+
+  @media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 462px) {
+    .contact form .input-box .input-field {
+        width: 100%;
+    }
+  }

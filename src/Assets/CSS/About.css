@@ -112,3 +112,9 @@
     padding: 10rem 4% 2rem;
   }
 }
+
+@media (max-width: 520px) {
+  html {
+      font-size: 50%;
+  }
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import '../Assets/CSS/Footer.css';
 import {BiUpArrowAlt} from 'react-icons/bi';
 
@@ -9,7 +10,11 @@ function Footer() {
             </div>
 
             <div className='footer-iconTop'>
-                <a href=''><BiUpArrowAlt className='uparrow' /></a>
+                <Link
+                className='uparrow' 
+                smooth={true}
+                duration={1} 
+                to='home'><BiUpArrowAlt className='uparrow-icon' /></Link>
             </div>
 
         </footer>

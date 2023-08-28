@@ -7,39 +7,33 @@ import '../Assets/CSS/Header.css';
 function Header() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let navbar = document.querySelector('.navbar');
+
+  const handleScroll = () => {
+    const sections = document.querySelectorAll('section');
+    const scrollPosition = window.scrollY;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      const sectionName = section.getAttribute('id');
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        setActiveSection(sectionName);
+        setIsMenuOpen(false);
+      }
+    });
+  };
 
   useEffect(() => {
-
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      const scrollPosition = window.scrollY;
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        const sectionName = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionName);
-        }
-      });
-      navbar.classList.remove ('active');
-      setIsMenuOpen(false);
-    };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-    
   }, []);
 
   const MenuIcon = () => {
-    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
-
-    navbar.classList.toggle('active');
-  }
+    setIsMenuOpen(prevState => !prevState);
+  };
 
   return (
     <header className='header'>
@@ -47,18 +41,17 @@ function Header() {
         Abdul Aziz.
       </Link>
 
-      {/* Conditional rendering of menu/close icon */}
       {isMenuOpen ? (
         <RxCross2 onClick={MenuIcon} id='menu-icon' />
       ) : (
         <FiMenu onClick={MenuIcon} id='menu-icon' />
       )}
 
-      <nav className="navbar">
+      <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
         <Link
           to="home"
           smooth={true}
-          duration={1}
+          duration={500}
           className={activeSection === 'home' ? 'a active' : 'a'}
         >
           Home
@@ -66,7 +59,7 @@ function Header() {
         <Link
           to="about"
           smooth={true}
-          duration={1}
+          duration={500}
           className={activeSection === 'about' ? 'a active' : 'a'}
         >
           About
