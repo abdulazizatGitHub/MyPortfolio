@@ -76,6 +76,7 @@
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
   }
 
   .about-content{
@@ -116,5 +117,11 @@
 @media (max-width: 520px) {
   html {
       font-size: 50%;
+  }
+}
+
+@keyframes aboutSpinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

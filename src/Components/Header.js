@@ -20,6 +20,11 @@ function Header() {
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         setActiveSection(sectionName);
         setIsMenuOpen(false);
+
+        section.classList.add('show-animate');
+      }
+      else {
+        section.classList.remove('show-animate');
       }
     });
   };
@@ -39,12 +44,13 @@ function Header() {
     <header className='header'>
       <Link to="home" smooth={true} duration={500} className="logo">
         Abdul Aziz.
+        <span className='animate'></span>
       </Link>
 
       {isMenuOpen ? (
-        <RxCross2 onClick={MenuIcon} id='menu-icon' />
+        <div onClick={MenuIcon} id='menu-icon'><RxCross2/><span className='animate'></span></div>
       ) : (
-        <FiMenu onClick={MenuIcon} id='menu-icon' />
+        <div onClick={MenuIcon} id='menu-icon'><FiMenu /><span className='animate'></span></div>
       )}
 
       <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
@@ -90,6 +96,7 @@ function Header() {
         </Link>
 
         <span className='active-nav' ></span>
+        <span className='animate'></span>
       </nav>
     </header>
   );
