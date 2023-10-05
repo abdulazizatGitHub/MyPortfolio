@@ -33,6 +33,12 @@
     padding-bottom: 7rem;
 }
 
+.contact h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .contact form{
     max-width: 70%;
     margin: 0 auto;
@@ -102,6 +108,12 @@
 .contact form .btn-box.btns .btn{
     cursor: pointer;
 }
+
+
+.contact.show-animate .animate.scroll {
+    animation-delay: calc(.3s * var(--i));
+    width: 0;
+  }
 
 
 

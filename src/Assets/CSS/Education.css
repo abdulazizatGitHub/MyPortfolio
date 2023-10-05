@@ -48,11 +48,14 @@
   }
 
   .education-column .title{
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
   }
 
   .education-column .education-box{
+    position: relative;
     border-left: .2rem solid var(--main-color);
   }
 
@@ -116,6 +119,15 @@
     font-size: 1.6rem;
     padding-top: 5rem;
 
+  }
+
+  .education .education-box .animate.scroll {
+    width: 105%;
+  }
+
+  .education.show-animate .animate.scroll {
+    animation-delay: calc(.3s * var(--i));
+    width: 0;
   }
 
 

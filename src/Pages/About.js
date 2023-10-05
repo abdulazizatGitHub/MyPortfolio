@@ -3,20 +3,26 @@ import '../Assets/CSS/About.css';
 function About() {
     return (
         <section className="about" id="about">
-            <h2 className="heading">About <span>Me</span></h2>
+            <h2 className="heading">About <span>Me</span><span className='animate scroll' style={{"--i":1}}></span></h2>
 
             <div className="about-img">
                 <img src={about} alt="" />
                 <span className='circle-spin'></span>
+                <span className='animate scroll' style={{"--i":2}}></span>
             </div>
             
             <div className='about-content'>
-                <h3>Web Developer!</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h3>Web Developer! <span className='animate scroll' style={{"--i":3}}></span></h3>
+                <p>Thank you for visiting my portfolio website. Get ready to embark on a visual and interactive journey that reflects the essence of Abdul Aziz a creative visionary in the world of web development.
+                <br />
+                🚀 Let's create something extraordinary together! 🚀
+                <span className='animate scroll' style={{"--i":5}}></span>
+                </p>
 
-                <div className='btn-box btns'>
+                {/* <div className='btn-box btns'>
                     <a href='#' className='btn'>Read More</a>
-                </div>
+                    <span className='animate scroll' style={{"--i":6}}></span>
+                </div> */}
             </div>
         </section>
     );

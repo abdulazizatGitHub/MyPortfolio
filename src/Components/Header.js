@@ -22,12 +22,14 @@ function Header() {
         setIsMenuOpen(false);
 
         section.classList.add('show-animate');
+
       }
       else {
         section.classList.remove('show-animate');
       }
     });
   };
+  
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -48,9 +50,9 @@ function Header() {
       </Link>
 
       {isMenuOpen ? (
-        <div onClick={MenuIcon} id='menu-icon'><RxCross2/><span className='animate'></span></div>
+        <div onClick={MenuIcon} id='menu-icon'><RxCross2/><span className='animate' style={{"--i":1}}></span></div>
       ) : (
-        <div onClick={MenuIcon} id='menu-icon'><FiMenu /><span className='animate'></span></div>
+        <div onClick={MenuIcon} id='menu-icon'><FiMenu /><span className='animate' style={{"--i":2}}></span></div>
       )}
 
       <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
@@ -96,7 +98,7 @@ function Header() {
         </Link>
 
         <span className='active-nav' ></span>
-        <span className='animate'></span>
+        <span className='animate' style={{"--i":3}}></span>
       </nav>
     </header>
   );

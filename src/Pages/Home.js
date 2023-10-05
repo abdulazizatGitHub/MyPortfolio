@@ -10,7 +10,7 @@ function Home() {
                     <h3>Web Developer</h3>
                     <span className='animate'></span>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Welcome to my world of web development! I specialize in crafting digital experiences that blend artistry with technology. With a passion for innovation and a commitment to excellence, I turn ideas into interactive realities. Let's build something extraordinary together.
                 <span className='animate'></span>
                 </p>
 
