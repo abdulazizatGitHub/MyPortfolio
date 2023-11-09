@@ -1,7 +1,7 @@
 import { Link } from 'react-scroll';
 import '../Assets/CSS/Footer.css';
 import {BiUpArrowAlt} from 'react-icons/bi';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function Footer() {
     return (

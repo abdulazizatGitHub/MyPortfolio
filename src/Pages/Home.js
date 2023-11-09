@@ -1,6 +1,6 @@
 import '../Assets/CSS/Home.css'
-import {FaFacebookF, FaTwitter} from 'react-icons/fa';
-import {BsInstagram} from 'react-icons/bs';
+import {FaLinkedin, FaTwitter} from 'react-icons/fa';
+
 function Home() {
     return (
         <section className="home show-animate" id="home">
@@ -21,9 +21,8 @@ function Home() {
                 </div>
 
                 <div className='home-sci'>
-                    <a className='a' href=''><FaFacebookF /></a>
-                    <a className='a' href=''><FaTwitter /></a>
-                    <a className='a' href=''><BsInstagram /></a>
+                    <a className='a' href='https://www.linkedin.com/in/abdul-aziz-41364728a/'><FaLinkedin /></a>
+                    <a className='a' href='https://twitter.com/AbdulAziz19280'><FaTwitter /></a>
                     <span className='animate'></span>
                 </div>
 
