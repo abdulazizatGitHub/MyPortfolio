@@ -1,0 +1,80 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.login-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.login-form-container {
+    width: 100%;
+    height: 70%;
+}
+
+/* Container for the text */
+.login-text-container p {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--main-color);
+    overflow: hidden; /* Ensures text is hidden until animated */
+    border-right: 3px solid var(--main-color); /* Creates a cursor effect */
+    white-space: nowrap; /* Prevents text wrapping */
+    margin: 0;
+    width: 20ch; /* The width is based on the number of characters (21 for "Login To Admin Portal") */
+    animation: typing 3.5s steps(21, end) 1s forwards, 
+               blink-caret 0.75s step-end infinite,
+               hide-caret 3.5s steps(21, end) 4.5s forwards, 
+               repeat 5s 8s infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20ch; /* Match the width to the exact number of characters */
+    }
+}
+
+/* Blinking caret animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--main-color); /* Blinking effect for the cursor */
+    }
+}
+
+/* Hide caret after typing completes */
+@keyframes hide-caret {
+    from {
+        border-color: var(--main-color);
+    }
+    to {
+        border-color: transparent; /* Hide caret after typing */
+    }
+}
+
+/* Repeat the entire animation after a delay */
+@keyframes repeat {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1; /* Keeps text visible after repeat */
+    }
+}
