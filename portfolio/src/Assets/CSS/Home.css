@@ -7,51 +7,81 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-  
-  }
-  
-  :root{
-      --bg-color: #081b29;
-      --second-bg-color: #112e42;
-      --text-color: #ededed;
-      --main-color: #00abf0;
-  }
-  
-  html{
-      font-size: 62.5%;
-      overflow-x: hidden;
-  }
-  
-  body{
-      background: var(--bg-color);
-      color: var(--text-color);
-  
-  }
+}
 
-section{
+:root {
+    --bg-color: #0a192f;              /* Deep navy */
+    --second-bg-color: #1a2236;       /* Slate blue */
+    --text-color: #f5f5f5;            /* Off-white */
+    --main-color: #00abf0;            /* Cyan/blue */
+    --accent-color: #ffb400;          /* Gold */
+    --muted-text: #b2becd;            /* Muted blue-gray */
+    --button-gradient: linear-gradient(90deg, #00abf0 0%, #a259ff 100%);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
 
-.home{
+.home {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('../Images/home.png') no-repeat;
-    background-size: cover;
-    background-position: center;
+    position: relative;
 }
 
-.home.show-animate .animate {
-    animation: showRight 1s ease forwards;
-    animation-delay: calc(.3s * var(--i));
+.home-hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+    min-height: 70vh;
 }
 
-.home-content{
-    max-width: 60rem;
-    z-index: 99;
+.home-content {
+    flex: 1 1 0;
+    z-index: 2;
+    position: relative;
 }
-.home-content h1{
+
+.home-image-container {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+}
+
+.home-profile-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0,171,240,0.25), 0 2px 8px rgba(10,25,47,0.15);
+    border: 6px solid var(--second-bg-color);
+    background: var(--second-bg-color);
+    animation: float 4s ease-in-out infinite;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.home-profile-img:hover {
+    box-shadow: 0 16px 48px rgba(0,171,240,0.35), 0 4px 16px rgba(10,25,47,0.18);
+    border: 6px solid var(--accent-color);
+}
+
+.home-content h1 {
     position: relative;
     display: inline-block;
     font-size: 5.6rem;
@@ -63,11 +93,12 @@ section{
     color: var(--text-color);
 }
 
-.home-content .text-animate{
+.home-content .text-animate {
     position: relative;
     width: 32.8rem;
 }
-.home-content .text-animate h3{
+
+.home-content .text-animate h3 {
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
@@ -75,6 +106,7 @@ section{
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
+    background-clip: text;
     background-position: 0 0;
     animation: homeBgText 6.2s linear infinite;
     animation-delay: 2s;
@@ -91,28 +123,33 @@ section{
     animation-delay: 2s;
 }
 
-.home-content p{
+.home-content p {
     position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
+    line-height: 1.6;
 }
 
-.btn-box{
+.btn-box {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    width: 34.5rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 34.5rem;
     height: 5rem;
+    margin-bottom: 3rem;
 }
-.btn-box .btn{
+
+.btn-box .btn {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 15rem;
     height: 100%;
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
+    background: var(--button-gradient);
+    border: none;
     border-radius: .8rem;
     font-size: 1.8rem;
     font-weight: 600;
@@ -120,27 +157,32 @@ section{
     color: var(--bg-color);
     z-index: 1;
     overflow: hidden;
-    transition: .5s;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
 }
 
-.btn-box .btn:hover{
-    color: var(--main-color);
+.btn-box .btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 32px rgba(0,171,240,0.3);
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
 }
 
-.btn-box .btn:nth-child(2){
+.btn-box .btn:nth-child(2) {
     background: transparent;
     color: var(--main-color);
+    border: 2px solid var(--main-color);
 }
 
-.btn-box .btn:nth-child(2):hover{
+.btn-box .btn:nth-child(2):hover {
     color: var(--bg-color);
 }
 
-.btn-box .btn:nth-child(2)::before{
+.btn-box .btn:nth-child(2)::before {
     background: var(--main-color);
 }
 
-.btn-box .btn::before{
+.btn-box .btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -151,40 +193,45 @@ section{
     z-index: -1;
     transition: .5s;
 }
-.btn-box .btn:hover:before{
+
+.btn-box .btn:hover::before {
     width: 100%;
 }
 
-.home-sci{
-    position: absolute;
-    bottom: 4rem;
-    width: 170px;
+.home-sci {
+    position: relative;
     display: flex;
-    justify-content: space-evenly;
+    gap: 2rem;
+    width: auto;
+    margin-top: 2rem;
 }
 
-.home-sci .a{
+.home-sci a {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 2.4rem;
     color: var(--main-color);
     z-index: 1;
     overflow: hidden;
-    transition: .5s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
 }
 
-.home-sci .a:hover{
+.home-sci a:hover {
+    transform: scale(1.15) rotate(-8deg);
+    background: var(--accent-color);
     color: var(--bg-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 16px rgba(255,180,0,0.2);
 }
 
-.home-sci .a::before{
+.home-sci a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -196,43 +243,67 @@ section{
     transition: .5s;
 }
 
-.home-sci .a:hover::before{
+.home-sci a:hover::before {
     width: 100%;
 }
 
-.home-imghover{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    background: transparent;
-    transition: .3s;
+/* Animations */
+@keyframes homeBgText {
+    0%, 10%, 100% {
+        background-position: -33rem 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
+    }
 }
 
-.home-imghover:hover{
-    background: var(--bg-color);
-    opacity: .8;
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
 }
 
-
-.animate {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    z-index: 98;
+@keyframes float {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-20px);}
+    100% { transform: translateY(0);}
 }
 
-.animate.home-img {
-    width: 50%;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0);}
+    to { opacity: 0; transform: translateY(40px);}
+}
 
+.fade-in {
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+}
 
+.fade-out {
+    opacity: 0;
+    animation: fadeOut 1s forwards;
+}
 
+.home-content h1,
+.home-content .text-animate,
+.home-content p,
+.btn-box,
+.home-sci {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+.home-content h1 { animation-delay: 0.2s; }
+.home-content .text-animate { animation-delay: 0.4s; }
+.home-content p { animation-delay: 0.6s; }
+.btn-box { animation-delay: 0.8s; }
+.home-sci { animation-delay: 1s; }
+
+/* Responsive Design */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -241,40 +312,100 @@ section{
 
 @media (max-width: 991px) {
     section {
-      padding: 10rem 4% 2rem;
+        padding: 10rem 4% 2rem;
     }
-  
     .home {
-      padding: 0 4%;
+        padding: 0 4%;
     }
-    .home-imghover {
-        pointer-events: none;
-        background: var(--bg-color);
-        opacity: .6;
-    }
-  }
+}
 
-  @media (max-width: 520px) {
+@media (max-width: 900px) {
+    .home-hero-container {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: flex-start;
+        text-align: center;
+    }
+    .home-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-image-container {
+        justify-content: center;
+        width: 100%;
+    }
+    .home-profile-img {
+        width: 220px;
+        height: 220px;
+    }
+    .btn-box {
+        justify-content: center;
+    }
+    .home-sci {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-hero-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    .home-content {
+        text-align: center;
+    }
+    .home-image-container {
+        justify-content: center;
+    }
+    .home-profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    .btn-box {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 1.5rem;
+    }
+    .btn-box .btn {
+        width: 18rem;
+    }
+    .home-content h1 {
+        font-size: 4.5rem;
+    }
+    .home-content .text-animate h3 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 520px) {
     html {
         font-size: 50%;
     }
-
     .home-content h1 {
         display: flex;
         flex-direction: column;
+        font-size: 4rem;
     }
     .home-sci {
-        width: 160px;
+        gap: 1.5rem;
     }
-    .home-sci .a {
-        width: 38px;
-        height: 38px;
+    .home-sci a {
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 462px) {
-    .home-content {
-        font-size: 5.2rem;
+    .home-content h1 {
+        font-size: 3.8rem;
+    }
+    .home-content .text-animate h3 {
+        font-size: 2.4rem;
     }
 }
 
@@ -282,30 +413,17 @@ section{
     .home {
         justify-content: center;
     }
-     .home-content {
+    .home-content {
         display: flex;
         align-items: center;
         flex-direction: column;
         text-align: center;
-     }
-
-     .home-content h1 {
-        font-size: 5rem;
-     }
-}
-
-@media (max-width: 850px) {
-    .animate.home-img {
-        width: 55%;
     }
-}
-
-@keyframes homeBgText {
-    0%, 10%, 100% {
-        background-position: -33rem 0;
+    .home-content h1 {
+        font-size: 3.5rem;
     }
-
-    65%, 85% {
-        background-position: 0 0;
+    .btn-box .btn {
+        width: 16rem;
+        font-size: 1.6rem;
     }
 }

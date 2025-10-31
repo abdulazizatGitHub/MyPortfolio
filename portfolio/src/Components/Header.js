@@ -89,6 +89,14 @@ function Header() {
           Skills
         </Link>
         <Link
+          to="projects"
+          smooth={true}
+          duration={1}
+          className={activeSection === 'projects' ? 'a active' : 'a'}
+        >
+          Project
+        </Link>
+        <Link
           to="contact"
           smooth={true}
           duration={1}

@@ -130,6 +130,78 @@
     width: 0;
   }
 
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeSlideRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes dotPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 var(--main-color); }
+    50% { transform: scale(1.2); box-shadow: 0 0 8px 2px var(--main-color); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 var(--main-color); }
+  }
+
+  /* Animation utility classes */
+  .fade-slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideUp 0.8s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  .fade-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeSlideLeft 0.8s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  .fade-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: fadeSlideRight 0.8s cubic-bezier(.4,0,.2,1) forwards;
+  }
+
+  .education.show-animate .fade-slide-up,
+  .education.show-animate .fade-slide-left,
+  .education.show-animate .fade-slide-right {
+    opacity: 1;
+  }
+
+  .education-content .content {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .education-content .content:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 24px 0 var(--main-color);
+  }
+
+  .education-box .education-content:hover::before {
+    animation: dotPulse 0.7s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0);}
+    to { opacity: 0; transform: translateY(40px);}
+  }
+
+  .fade-in {
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+  }
+
+  .fade-out {
+    opacity: 0;
+    animation: fadeOut 1s forwards;
+  }
 
 
   @media (max-width: 1200px) {
