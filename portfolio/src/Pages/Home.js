@@ -1,7 +1,7 @@
 import '../Assets/CSS/Home.css'
 import {FaLinkedin, FaGithub} from 'react-icons/fa';
 import ProfileImg from '../Assets/Images/MyImage.jpeg';
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useMemo } from 'react';
 
 function useFadeOnScroll(ref) {
     const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +30,15 @@ function Home() {
     const imgClass = useFadeOnScroll(imgRef);
 
     const [displayText, setDisplayText] = useState('');
-    const roles = ['AI/ML Engineer', 'Software Engineer', 'Full-Stack Developer', 'Frontend Developer'];
+    
+    // Fix: Use useMemo to memoize the roles array
+    const roles = useMemo(() => [
+        'AI/ML Engineer', 
+        'Software Engineer', 
+        'Full-Stack Developer', 
+        'Frontend Developer'
+    ], []); // Empty dependency array means this only gets created once
+    
     const [roleIndex, setRoleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -57,7 +65,7 @@ function Home() {
         }, typingSpeed);
 
         return () => clearTimeout(timeout);
-    }, [charIndex, isDeleting, roleIndex, roles]);
+    }, [charIndex, isDeleting, roleIndex, roles]); // Now roles is stable
 
     // Function to handle CV download
     const handleDownloadCV = () => {
