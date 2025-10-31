@@ -26,6 +26,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 .contact {
@@ -38,7 +39,6 @@ body {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    position: relative;
 }
 
 .heading span {
@@ -48,18 +48,19 @@ body {
 .contact-subtitle {
     font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
     color: var(--text-color);
     opacity: 0.9;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 2rem;
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 6rem;
+    gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
     align-items: start;
@@ -68,20 +69,21 @@ body {
 /* Contact Information Styles */
 .contact-info {
     background: rgba(255, 255, 255, 0.05);
-    padding: 4rem 3rem;
+    padding: 3.5rem 2.5rem;
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    height: fit-content;
 }
 
 .contact-info h3 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     margin-bottom: 1.5rem;
     color: var(--main-color);
 }
 
 .contact-info > p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 3rem;
     line-height: 1.6;
     opacity: 0.9;
@@ -91,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .contact-info-item {
@@ -101,38 +103,47 @@ body {
 }
 
 .contact-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background: linear-gradient(135deg, var(--main-color), var(--accent-color));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     flex-shrink: 0;
 }
 
+.contact-details {
+    flex: 1;
+}
+
 .contact-details h4 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
 
 .contact-details a,
 .contact-details span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     opacity: 0.9;
     text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-word;
 }
 
 .contact-details a:hover {
     color: var(--main-color);
 }
 
+.social-links {
+    margin-top: 3rem;
+}
+
 .social-links h4 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin-bottom: 1.5rem;
     color: var(--text-color);
 }
@@ -140,6 +151,7 @@ body {
 .social-icons {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -166,7 +178,7 @@ body {
 /* Contact Form Styles */
 .contact-form-container {
     background: rgba(255, 255, 255, 0.05);
-    padding: 4rem;
+    padding: 3.5rem 3rem;
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -177,26 +189,27 @@ body {
 }
 
 .input-box {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
 .input-field {
     position: relative;
-    flex: 1;
 }
 
 .input-field input,
 .textarea-field textarea {
     width: 100%;
-    padding: 1.8rem 2rem;
-    font-size: 1.6rem;
+    padding: 1.6rem 1.8rem;
+    font-size: 1.5rem;
     color: var(--text-color);
     background: rgba(255, 255, 255, 0.08);
     border-radius: 1rem;
     border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .input-field input.error,
@@ -259,9 +272,9 @@ body {
 .submit-btn {
     background: linear-gradient(135deg, var(--main-color), var(--accent-color));
     color: var(--bg-color);
-    padding: 1.5rem 4rem;
+    padding: 1.4rem 3.5rem;
     border-radius: 1.2rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -318,6 +331,7 @@ body {
     justify-content: center;
     font-size: 3.5rem;
     margin: 0 auto 2rem;
+    color: white;
     animation: bounce 0.6s ease;
 }
 
@@ -377,11 +391,35 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    html {
+        font-size: 58%;
+    }
+    
+    .contact {
+        padding: 10rem 6% 5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .contact {
+        padding: 10rem 5% 5rem;
+    }
+    
+    .contact-container {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 850px) {
     .contact-container {
         grid-template-columns: 1fr;
         gap: 4rem;
-        max-width: 600px;
+        max-width: 650px;
     }
     
     .contact-info {
@@ -390,12 +428,21 @@ body {
     
     .contact-info-item {
         justify-content: center;
+        text-align: left;
+    }
+    
+    .social-icons {
+        justify-content: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    html {
+        font-size: 52%;
+    }
+    
     .contact {
-        padding: 10rem 5% 5rem;
+        padding: 8rem 4% 4rem;
     }
     
     .heading {
@@ -405,33 +452,24 @@ body {
     .contact-subtitle {
         font-size: 1.6rem;
         margin-bottom: 4rem;
+        padding: 0 1rem;
     }
     
-    .contact-form-container {
-        padding: 3rem 2rem;
-    }
-    
-    .input-box {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact {
-        padding: 8rem 3% 3rem;
-    }
-    
-    .heading {
-        font-size: 3.5rem;
+    .contact-container {
+        gap: 3rem;
     }
     
     .contact-info {
-        padding: 3rem 2rem;
+        padding: 2.5rem 2rem;
     }
     
     .contact-form-container {
-        padding: 2.5rem 1.5rem;
+        padding: 2.5rem 2rem;
+    }
+    
+    .input-box {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .contact-icon {
@@ -440,17 +478,107 @@ body {
         font-size: 1.6rem;
     }
     
-    .contact-details h4 {
-        font-size: 1.6rem;
-    }
-    
-    .contact-details a,
-    .contact-details span {
-        font-size: 1.4rem;
+    .textarea-field textarea {
+        min-height: 130px;
     }
     
     .submit-btn {
         padding: 1.2rem 3rem;
         font-size: 1.6rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .contact {
+        padding: 7rem 3% 3rem;
+    }
+    
+    .heading {
+        font-size: 3.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-info-items {
+        gap: 2rem;
+    }
+    
+    .contact-info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-details {
+        text-align: center;
+    }
+    
+    .input-field input,
+    .textarea-field textarea {
+        padding: 1.4rem 1.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 1.2rem 2.5rem;
+    }
+    
+    .success-icon {
+        width: 6rem;
+        height: 6rem;
+        font-size: 3rem;
+    }
+    
+    .success-message h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    html {
+        font-size: 48%;
+    }
+    
+    .contact {
+        padding: 6rem 2% 2rem;
+    }
+    
+    .heading {
+        font-size: 3.2rem;
+    }
+    
+    .contact-info {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .social-link {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.8rem;
     }
 }
