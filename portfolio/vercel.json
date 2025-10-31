@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "build",
+  "installCommand": "npm install",
+  "devCommand": "npm run start",
+  "framework": "create-react-app",
+  "regions": ["iad1"]
+}
